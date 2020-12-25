@@ -1,0 +1,26 @@
+//Apostolos Kasselours, A.M:2994
+//test mainly for quads
+
+program test2
+{
+	declare a,b,c,t;
+
+	{
+	a:=1;
+	t:=((1000-500)*a)/500;
+	b:=a+t;
+	while(not[a+b<=1 and b<5] or a>5)
+	{
+		if(t=1)then
+			c:=2;
+		if(t=2)then
+			c:=4
+		else
+			c:=0;
+		while(a<1)
+			if(a=2)then
+				while(b=1)
+					c:=2
+	};
+	}
+}

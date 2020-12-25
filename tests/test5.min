@@ -1,0 +1,29 @@
+//Apostolos Kasselours, A.M:2994
+//test mainly for final code
+
+program test5
+{
+	declare a, A, B;
+
+	procedure f1(in a, inout b)
+	{
+		function f2(in a)
+		{
+			{B:= A;
+			 b:= a}
+		}
+
+		{A:= 2;
+		 a:= f2(in f2(in a));
+		 print(a)}
+	}
+
+	//main 
+	{a:= 3;
+	 A:= 4;
+	 call f1(in a, inout A);
+	 print(A);
+	 if(a <> (B+A))then
+	 	print(B);
+	}
+}

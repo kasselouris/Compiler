@@ -1,0 +1,50 @@
+//Apostolos Kasselours, A.M:2994
+//test mainly for lex, syntax and quads
+
+program test1
+{
+	declare a,b,c,d,e,x,y;
+
+	function max(in x, in y)
+	{
+		if(x>y)then
+			return(x)	//sxolia
+		else
+			return(y)	//sxolia
+	}
+
+	procedure printCB(in c, in b, inout a)
+	{
+		{
+		print(c);
+		print(b);
+		a:=c+10;
+		}
+	}
+
+	{
+		a:=1;	/*sxolia
+				perissotera sxolia*/
+		b:=10;
+		x:=-1;
+		y:=0;
+		e:= max(in max(in a, in b), in c);
+		d:=e;
+		e:= max(in x, in y);
+
+		forcase
+			/*sxolia*/
+			when(a=1):
+				b:=1
+			when(a=10):
+				b:=d
+			when(a=d):
+				b:=(d+x+1)/2
+			default:
+				b:=d+1;
+
+		print(a);
+		input(c);
+		call printCB(in c, in b, inout a);
+	}
+}

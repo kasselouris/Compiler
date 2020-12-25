@@ -1,0 +1,49 @@
+//Apostolos Kasselours, A.M:2994
+//test mainly for framelengths and nesting levels check(symbol table)
+
+program test4
+{
+	declare a,b,c;
+
+	procedure A1(in x)
+	{
+		declare a,e;
+
+		procedure B1(inout x, in y)
+		{
+			declare a;
+
+			procedure C1(inout y)
+			{
+				declare a;
+
+				a:= a+1		//1 temp value
+			}
+
+			procedure C2(inout x, inout y)
+			{
+				declare a;
+
+				a:= x+y+1	//2 temp value
+			}
+
+			a:= a+1		//1 temp value
+		}
+
+		procedure B2(in x)
+		{
+			declare a,e;
+
+			a:= (x+2)/1		//2 temp value
+		}
+	}
+
+	procedure A2(in x, in y)
+	{
+		declare a;
+
+		a:= x+y		//1 temp value
+	}
+
+	a:= b+c+1		//2 temp value
+}

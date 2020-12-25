@@ -1,0 +1,44 @@
+//Apostolos Kasselours, A.M:2994
+//test mainly for symbol table and final code
+
+program test3
+{
+	declare a,b,c;
+
+	procedure P1(in x, inout y)
+	{
+		declare a;
+
+		function F11(in x)
+		{
+			declare a;
+			//body of F11
+			{b:= a;
+			 a:= x;
+			 c:= F11(in x);
+			 return(c)}
+		}
+
+		function F21(in x)
+		{
+			//body of F21
+			{c:= F11(in x);
+			 return(c)}
+		}
+
+		//body of P1
+		y:= x
+	}
+
+	procedure P2(in y)
+	{
+		declare x;
+		//body of F11
+		{y:= 1;
+		 call P1(in x, inout y)}
+	}
+
+	//body of main
+	{call P1(in a, inout b);
+	 call P2(in c)}
+}
